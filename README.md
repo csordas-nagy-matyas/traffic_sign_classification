@@ -67,8 +67,8 @@ In terms of the LeNet5 architecture, it is suggested to provide grayscale pictur
 
 **Custom LeNet5:**
 
-|**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**||
-| :-: | :-: | :-: | :-: | :-: | :-: | :- |
+||**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**|
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |Input|Image|1|60x60|-|-|-|
 |1|Convolution|6|60x60|5x5|1|ReLu|
 |2|Max Pooling|6|30x30|2x2|2|-|
@@ -87,7 +87,7 @@ In terms of the LeNet5 architecture, it is suggested to provide grayscale pictur
 
 **Custom AlexNet:**
 
-|**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**||
+||**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**|
 | :-: | :-: | :-: | :-: | :-: | :-: | :- |
 |Input|Image|1|130x130|-|-|-|
 |1|Convolution|24|63x63|5x5|2|ReLu|
@@ -114,7 +114,7 @@ In terms of the LeNet5 architecture, it is suggested to provide grayscale pictur
 
 **VGG 16 with fully connected layers:**
 
-|**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**||
+||**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**|
 | :-: | :-: | :-: | :-: | :-: | :-: | :- |
 |Input|Image||120x120|-|-|-|
 |Output|VGG16 output|512|3x3|-|-|-|
@@ -127,7 +127,7 @@ In terms of the LeNet5 architecture, it is suggested to provide grayscale pictur
 
 **InceptionV3 with transfer learning:**
 
-|**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**||
+||**Layer**|**Feature Map**|**Size**|**Kernel Size**|**Stride**|**Activation**|
 | :-: | :-: | :-: | :-: | :-: | :-: | :- |
 |Input|Image||130x130|-|-|-|
 |Output|InceptionV3 output|2048|2x2|-|-|-|
@@ -147,7 +147,7 @@ Besides the InceptionV3 model, my customized LeNet5 could achieve nearly the sam
 The difference between the test accuracies is less then 1%, but we should keep in mind, that LeNet5 is a much smaller and faster than InceptionV3. So, I would recommend both models, but maybe LeNet5 is the best choice.
 
 
-### Summary Key Findings and Insights:
+### 6, Summary Key Findings and Insights, which walks your reader through the main findings of your modeling exercise.
 
 If we focus on the data exploration step, we can determine, that the dataset is strongly imbalanced and the resolution of the pictures are very low. Some of the pictures have too low or too high contrast values. I made some measures to improve the resolution and correct the contrast values.
 I implemented a balanced\_data\_generator, which can generate balanced batches during training. As a preprocessing step, I applied histogram equalization on the pictures to avoid inappropriate contrast values.

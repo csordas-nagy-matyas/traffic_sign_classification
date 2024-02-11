@@ -21,12 +21,12 @@ def show_random_images(mapping, train_datagen):
     plt.show() 
 
 
-def show_predictions(model, mapping, test_imgs, test_labels, img_width, img_height):
+def show_predictions(model, mapping, test_imgs, test_labels, img_width, img_height, n_channels):
     fig, ax = plt.subplots(2, 4, figsize=(12, 6))
 
     for i, ax in enumerate(ax.flat):
         ax.imshow(test_imgs[i]) #/255.0
-        pred_class = model.predict(test_imgs[i].reshape(1, img_width, img_height, 3)).argmax()
+        pred_class = model.predict(test_imgs[i].reshape(1, img_width, img_height, n_channels)).argmax()
         pred_class = mapping[str(pred_class)]
         true_class = mapping[str(test_labels[i])]
         # print the predicted class label as the title of the image
